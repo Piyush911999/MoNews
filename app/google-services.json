@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "499437934465",
+    "project_id": "mo-news",
+    "storage_bucket": "mo-news.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499437934465:android:7e0c4a2e302673fefcfa80",
+        "android_client_info": {
+          "package_name": "com.lodestar.monews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499437934465-sch8ank93an8naqr7hh2hugm3281gof1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZlXec5aR1hcsmEKp33AKJ9AVjpldGzXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499437934465-sch8ank93an8naqr7hh2hugm3281gof1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

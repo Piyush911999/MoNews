@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Mo News</string>
+    <string name="mo_news">Mo News!</string>
+    <string name="notifications_admin_channel_name">mo_news</string>
+    <string name="notifications_admin_channel_description">get_latest_news</string>
+</resources>
