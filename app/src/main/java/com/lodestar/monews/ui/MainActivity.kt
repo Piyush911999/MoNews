@@ -175,7 +175,7 @@ class MainActivity : AppCompatActivity() {
     private fun initClickListeners() {
         sortBtn.setOnClickListener {
             if (!sorted) {
-                Toast.makeText(this, "Sorting Old to New", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Sorting Old to New", Toast.LENGTH_SHORT).show()
                 for (n in newsDataObject.articles.indices) {
                     newsDataObject.articles[n].timestamp = getTimestamp(newsDataObject.articles[n].publishedAt)
                 }
@@ -194,9 +194,9 @@ class MainActivity : AppCompatActivity() {
                 sorted = true
             } else {
                 if (oldToNew) {
-                    Toast.makeText(this, "Sorting New to Old", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Sorting New to Old", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Sorting Old to New", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Sorting Old to New", Toast.LENGTH_SHORT).show()
                 }
                 Collections.reverse(newsDataObject.articles)
                 oldToNew = !oldToNew
@@ -213,7 +213,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         appName.setOnClickListener {
-            Toast.makeText(this, "Copied fcmToken to clipboard", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Copied fcmToken to clipboard", Toast.LENGTH_SHORT).show()
             val clipboard: ClipboardManager =
                 getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("fcmToken", fcmToken)
