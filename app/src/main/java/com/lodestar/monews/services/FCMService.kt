@@ -14,7 +14,7 @@ import com.lodestar.monews.R
 import com.lodestar.monews.ui.MainActivity
 
 
-class FCMService: FirebaseMessagingService() {
+class FCMService : FirebaseMessagingService() {
     val TAG = "FCMService"
     override fun onNewToken(p0: String) {
         Log.d(TAG, p0)

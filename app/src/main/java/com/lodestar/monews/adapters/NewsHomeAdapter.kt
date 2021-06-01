@@ -40,7 +40,7 @@ class NewsHomeAdapter(
             }
             else -> {
                 val view = LayoutInflater.from(viewGroup.context)
-                        .inflate(R.layout.item_empty_view, viewGroup, false)
+                    .inflate(R.layout.item_empty_view, viewGroup, false)
                 EmptyViewHolder(view)
             }
         }
@@ -84,15 +84,16 @@ class NewsHomeAdapter(
         fun bindItem(newsArticle: Article, pos: Int) {
 
             itemView.newsTitle.text = newsArticle.title
-            itemView.newsTimestamp.text = "${formatDate(newsArticle.publishedAt)} => [${newsArticle.publishedAt}]"
+            itemView.newsTimestamp.text =
+                "${formatDate(newsArticle.publishedAt)} => [${newsArticle.publishedAt}]"
             itemView.newsPublisher.text = newsArticle.source.name
             try {
                 if (context.isFinishing)
                     Glide.with(context.applicationContext).load(newsArticle.urlToImage)
-                            .into(itemView.newsThumbnailIv)
+                        .into(itemView.newsThumbnailIv)
                 else
                     Glide.with(context).load(newsArticle.urlToImage)
-                            .into(itemView.newsThumbnailIv)
+                        .into(itemView.newsThumbnailIv)
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
@@ -112,7 +113,8 @@ class NewsHomeAdapter(
         try {
             val time: Long = sdf.parse(publishedAt).getTime()
             val now = System.currentTimeMillis()
-            ago = DateUtils.getRelativeTimeSpanString(time, now, DateUtils.MINUTE_IN_MILLIS).toString()
+            ago = DateUtils.getRelativeTimeSpanString(time, now, DateUtils.MINUTE_IN_MILLIS)
+                .toString()
         } catch (e: ParseException) {
             e.printStackTrace()
         }

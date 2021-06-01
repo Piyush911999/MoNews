@@ -122,15 +122,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//  get timestamp in milli-seconds
+    //  get timestamp in milli-seconds
     private fun getTimestamp(publishedAt: String?): Long {
-//        val dateString = "2013-09-19T03:27:23+01:00"
+//  val dateString = "2013-09-19T03:27:23+01:00"
         var testDate: Date? = null
-        val dateString = publishedAt
-        if (dateString != null) {
+        if (publishedAt != null) {
             val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
             try {
-                testDate = sdf.parse(dateString)
+                testDate = sdf.parse(publishedAt)
             } catch (e: ParseException) {
                 e.printStackTrace()
             }
@@ -177,9 +176,10 @@ class MainActivity : AppCompatActivity() {
             if (!sorted) {
                 Toast.makeText(this, "Sorting Old to New", Toast.LENGTH_SHORT).show()
                 for (n in newsDataObject.articles.indices) {
-                    newsDataObject.articles[n].timestamp = getTimestamp(newsDataObject.articles[n].publishedAt)
+                    newsDataObject.articles[n].timestamp =
+                        getTimestamp(newsDataObject.articles[n].publishedAt)
                 }
-                Collections.sort(newsDataObject.articles)
+                newsDataObject.articles.sort()
                 if (this::newsHomeAdapter.isInitialized) {
                     showProgressBar(false)
                     newsHomeAdapter.notifyDataSetChanged()
@@ -198,7 +198,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Sorting Old to New", Toast.LENGTH_SHORT).show()
                 }
-                Collections.reverse(newsDataObject.articles)
+                newsDataObject.articles.reverse()
                 oldToNew = !oldToNew
                 if (this::newsHomeAdapter.isInitialized) {
                     newsHomeAdapter.notifyDataSetChanged()
